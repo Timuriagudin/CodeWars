@@ -43,3 +43,26 @@ function squaresNeeded(grains){
         return i;
     }
 }
+
+// Powers of 3
+// Given a positive integer N, return the largest integer k such that 3^k < N.
+// For example,
+// largest_power(3) == 0
+// largest_power(4) == 1
+
+function largestPower(n){
+    let k = 0;
+    while (n > 0){
+        if (n <= 1)  return k -1;
+        if (n <= 3)  return k;
+        n = n / 3;
+        k++;
+    }
+    return k;
+}
+
+function largestPower(n){
+    for (i = 0; i < 999; i++)
+        if (Math.pow(3,i) >= n)
+            return i - 1;
+}
