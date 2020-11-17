@@ -33,6 +33,8 @@ function squaresNeeded(grains) {
     return s;
 }
 
+//---------------------------------------------------------------
+
 function squaresNeeded(grains){
     if(grains <= 2){ return grains;}
     if(grains > 2) {
@@ -60,9 +62,46 @@ function largestPower(n){
     }
     return k;
 }
+//----------------------------------------------------------
 
 function largestPower(n){
     for (i = 0; i < 999; i++)
         if (Math.pow(3,i) >= n)
             return i - 1;
+}
+
+// Next Prime
+// Get the next prime number!
+//You will get a numbern (>= 0) and your task is to find the next prime number.
+//Make sure to optimize your code: there will numbers tested up to about 10^12.
+// Examples
+// 5   =>  7
+// 12  =>  13
+
+function nextPrime(n){
+    let count=0;
+    for(let i=n+1;i>0;i++){
+        if (isPrime(i)){count = i; break}
+    }
+    return count
+}
+
+function isPrime(n) {
+    let rt = Math.sqrt(n);
+    for(let i = 2; i <= rt; i++) {
+        if(n % i === 0) return false;
+    }
+    return n !== 1;
+}
+//-------------------------------------------------------
+function nextPrime(n) {
+
+    let m = n > 1 ? n + 1 : 2;
+
+    for (let i = 2; i * i <= m; i++)
+        if (m % i === 0)
+            return nextPrime(m);
+
+    return m;
+
 }
