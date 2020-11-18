@@ -105,3 +105,49 @@ function nextPrime(n) {
     return m;
 
 }
+
+//Ученик учит английские слова.
+
+function englishWords(n){
+    let wordsEveryDay = 5;
+    let words = 0;
+    let days = 0;
+    while (words < n){
+        words = words + wordsEveryDay;
+        days++;
+        wordsEveryDay += 2;
+    }
+    return days
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
