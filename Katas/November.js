@@ -35,11 +35,13 @@ function squaresNeeded(grains) {
 
 //---------------------------------------------------------------
 
-function squaresNeeded(grains){
-    if(grains <= 2){ return grains;}
-    if(grains > 2) {
+function squaresNeeded(grains) {
+    if (grains <= 2) {
+        return grains;
+    }
+    if (grains > 2) {
         let i = 0;
-        while(2**i <= grains){
+        while (2 ** i <= grains) {
             i++;
         }
         return i;
@@ -52,21 +54,22 @@ function squaresNeeded(grains){
 // largest_power(3) == 0
 // largest_power(4) == 1
 
-function largestPower(n){
+function largestPower(n) {
     let k = 0;
-    while (n > 0){
-        if (n <= 1)  return k -1;
-        if (n <= 3)  return k;
+    while (n > 0) {
+        if (n <= 1) return k - 1;
+        if (n <= 3) return k;
         n = n / 3;
         k++;
     }
     return k;
 }
+
 //----------------------------------------------------------
 
-function largestPower(n){
+function largestPower(n) {
     for (i = 0; i < 999; i++)
-        if (Math.pow(3,i) >= n)
+        if (Math.pow(3, i) >= n)
             return i - 1;
 }
 
@@ -78,21 +81,25 @@ function largestPower(n){
 // 5   =>  7
 // 12  =>  13
 
-function nextPrime(n){
-    let count=0;
-    for(let i=n+1;i>0;i++){
-        if (isPrime(i)){count = i; break}
+function nextPrime(n) {
+    let count = 0;
+    for (let i = n + 1; i > 0; i++) {
+        if (isPrime(i)) {
+            count = i;
+            break
+        }
     }
     return count
 }
 
 function isPrime(n) {
     let rt = Math.sqrt(n);
-    for(let i = 2; i <= rt; i++) {
-        if(n % i === 0) return false;
+    for (let i = 2; i <= rt; i++) {
+        if (n % i === 0) return false;
     }
     return n !== 1;
 }
+
 //-------------------------------------------------------
 function nextPrime(n) {
 
@@ -108,11 +115,11 @@ function nextPrime(n) {
 
 //Ученик учит английские слова.
 
-function englishWords(n){
+function englishWords(n) {
     let wordsEveryDay = 5;
     let words = 0;
     let days = 0;
-    while (words < n){
+    while (words < n) {
         words = words + wordsEveryDay;
         days++;
         wordsEveryDay += 2;
@@ -120,7 +127,28 @@ function englishWords(n){
     return days
 }
 
+// Найдите значение дроби
+// question
+// Дано число n > 0. Найдите значение дроби:
+// fractional
+// Напишите функцию с именем fractional, которая принимает число n и возвращает значение дроби. В решении используйте цикл for. Значение дроби округлите до трех десятичнных знаков.
+// Примеры:
+// функция fractional(1) должна возвратить 1; // 1 / 1 = 1
+// функция fractional(2) должна возвратить 1.5; // 3 / 2 = 1.5
+// функция fractional(3) должна возвратить 1. // 6 / 6 = 1
+// функция fractional(4) должна возвратить 0.417. // 10 / 24 = 0.41666666... = 0.417
 
+function fractional(n) {
+    let sum = 0;
+    let mult = 1;
+    for (let i = 0; i <= n; i++) {
+        sum += i
+    }
+    for (let i1 = 1; i1 <= n; i1++) {
+        mult *= i1
+    }
+    return +(sum / mult).toFixed(3)
+}
 
 
 
