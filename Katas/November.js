@@ -270,8 +270,71 @@ function divisors(integer) {
 
 var summation = function (num) {
     let sum = 0;
-    for (let i = 0; i <= num; i++){
+    for (let i = 0; i <= num; i++) {
         sum += i
     }
     return sum
 }
+
+//Beginner Series #3 Sum of Numbers
+
+function getSum(a, b) {
+    var sum = 0;
+    if (a === b) {
+        return a;
+    } else if (a < b) {
+        for (var i = a; i <= b; i++) {
+            sum += i;
+        }
+    } else {
+        for (var i = b; i <= a; i++) {
+            sum += i;
+        }
+    }
+    return sum
+}
+
+//Training JS #10: loop statement --for
+
+function pickIt(arr) {
+    let odd = [], even = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            even.push(arr[i])
+        } else {
+            odd.push(arr[i]);
+        }
+    }
+    return [odd, even];
+}
+
+//Sum of Multiples
+// Find the sum of all multiples of n below m
+// Keep in Mind
+// n and m are natural numbers (positive integers)
+// m is excluded from the multiples
+
+function sumMul(n, m) {
+    let mult = 0;
+    if (m < n || n === 0) {
+        return "INVALID"
+    }
+    for (let i = n; i < m; i += n) {
+        mult += i;
+    }
+    return mult
+}
+
+//Draw stairs
+
+function drawStairs(n) {
+    let str = "";
+    for (let i = 1; i < n; i++) str = str + "I\n" + " ".repeat(i);
+    return str + "I";
+}
+
+
+
+
+
+
