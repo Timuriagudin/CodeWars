@@ -333,7 +333,116 @@ function drawStairs(n) {
     return str + "I";
 }
 
+//Вклад в банк (простой процент)
 
+function bankPercent(p){
+    let years = 0;
+    let invest = 1000;
+    do {
+        invest = invest + 1000/ 100 * p;
+        years++;
+    }
+    while (invest < 1500)
+    return years;
+}
+
+//Массив из цифр числа, записанных в обратном порядке.
+
+function arrayOfDigits(n){
+    let arr = [];
+    do{
+        arr.push(n%10)
+        n = Math.floor(n/10)
+    }while(n>0)
+    return arr;
+}
+
+//Содержит ли число цифру "2"?
+
+function doesNumberContain2(n){
+    let arr = []
+    do{
+        arr.push(n%10)
+        n = Math.floor(n/10)
+        for(let i =0; i<arr.length; i++){
+            if (arr[i]===2){
+                return true
+            }
+        }
+    }while(n>0)
+    return false;
+}
+
+
+//Round up to the next multiple of 5
+
+function roundToNext5(num) {
+    let numCopy = num;
+
+    while (numCopy % 5 !== 0) {
+        numCopy++;
+    }
+    return numCopy;
+}
+
+//Training JS #9: loop statement --while and do..while
+//https://www.codewars.com/kata/57216d4bcdd71175d6000560/javascript
+
+function padIt(str,n){
+    let res = str
+    do {
+        res =  (n % 2 === 0) ? res + "*" : "*" + res;
+        n--;
+    } while (n);
+    return res;
+
+}
+
+// Определите, содержит ли массив заданное значение.
+// Напишите функцию с именем isElementIncluded, которая принимает числовой массив arr и число x в качестве
+// аргументов и возвращает true, если в массиве есть элемент x, и false в противном случае.
+// В решении необходимо использовать оператор break.
+
+function isElementIncluded(arr, x){
+    for (let i = 0; i <= arr.length; i++){
+        if (arr[i] == x) {
+            return true;
+            break;
+        }
+    }
+    return false;
+}
+
+// Содержит ли строка данный символ?
+// Напишите функцию с именем iSymbInString, которая принимает строку str и символ symb
+// в качестве аргументов и возвращает true, если в строке встречается хотя бы один символ symb,
+// и false в противном случае.
+// В решении необходимо использовать оператор break. Запрещено использование методов строк.
+// Указание. Пройдите циклом по строке, и если встретится искомый символ, присвойте некоторой
+// переменной значение true и выполните прерывание цикла.
+
+function iSymbInString(str, symb){
+    for (let i = 0; i <= str.length; i++){
+        if (str[i] === symb){
+            return true;
+            break;
+        }
+    }
+    return false
+}
+
+//Получить массив из четных чисел от 2 до n, за исключением чисел, кратных 3.
+
+function fillArray(n){
+    let arr = [];
+    for (let i = 2; i <= n; i += 2){
+        if ( i % 3 === 0){
+            continue;
+        }
+        arr.push(i)
+    }
+    return arr
+}
 
 
 
